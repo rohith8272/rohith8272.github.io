@@ -1,6 +1,6 @@
 # 🚁 Building ArduPilot SITL on Ubuntu 24.04 (Noble)
 
-> Instructions to clone, build, and run ArduCopter SITL on Ubuntu 24.04.2 LTS (codename: noble).
+> Instructions to clone, build, and run ArduCopter SITL on Ubuntu 24.04.2 LTS (noble).
 
 ---
 
