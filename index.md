@@ -31,8 +31,8 @@ I occasionally write about drones, software, and research. Recent posts:
 - [Setting Up a VPN for UAS Projects Using ZeroTier](https://dronesim.gitbook.io/dronesim-docs/setting-up-a-vpn-for-uas-projects-using-zerotier)
   
 
-➡️ See all blog posts [here](./blog)
-Check out our first [blog post](blog/kernel.md) to learn more.
+
+➡️ See all blog posts [blog post](blog/kernel.md) to learn more.
 
 ---
 
