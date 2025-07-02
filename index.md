@@ -34,6 +34,8 @@ I occasionally write about drones, software, and research. Recent posts:
 
 ➡️ See all blog posts [blog post](blog/kernel.md) to learn more.
 
+Check out our [Blog](blog.md) for updates 
+
 ---
 
 ## 📚 Publications
