@@ -32,7 +32,7 @@ I occasionally write about drones, software, and research. Recent posts:
   
 
 ➡️ See all blog posts [here](./blog)
-Check out our first [blog post](blog/test.md) to learn more.
+Check out our first [blog post](blog/kernel.md) to learn more.
 
 ---
 
