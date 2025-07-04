@@ -1,4 +1,4 @@
-# Blog Index
+# Blog posts
 
 Welcome to the blog! Here you’ll find write-ups and insights from various projects.
 
