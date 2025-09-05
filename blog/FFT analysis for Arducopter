@@ -1,0 +1,23 @@
+Notes from setting up filters on arducopter platform:
+
+
+Setup for logging:
+Capture the data: Under FFT setup enable IMU 1 and 1024(1khz) or 2Khz if the board is capable of it.(cube orange)
+
+For log bitmask keep the default (disable raw IMU, video stabilization)
+
+INS_LOG_BAT_OPT =5 (check sensor rate logging and sample pre and post filter)
+
+Set Harmonic notches:
+INS_HNTCH_ENABLE =1
+INS_HNTCH_HMNCS =1 at the fundamental frequency or (more for harmonics 1 and 2)
+
+
+Setup Dynmaic FFT (if no RPM)
+
+Gyro LP filter:
+Tuning goal is to increase the cutoff freq. of the LP filter as high as possible without allowing noise to come through. Especially 
+the fundamental motor frequency or frame resonance. LP is better suited for high freq noise rather than dealing with the peaks.
+
+
+without any filtering:
