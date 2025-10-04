@@ -105,10 +105,14 @@ Example usage:
 ```bash
 python -m mavQT
 ```
+On connection to an active MAVLink stream, new messages are auto discovered. I can now check the messages that I would like to broadcast with the custom topic name (default mavlink/msg). The bottom terminal should now show the client topics. You can also recieve the topics on any device with an mqtt client within the network or using a VPN.
+
+The MAVLink packets are sent as soon as they are received by the tool, while it is also possible to set a time interval and QoS level. 
 
 ---
 
 ### Contribute
+The current tool is a PoC and you are free to modify and alter it to your requirements.
 If you’d like to improve **mavQT**, report bugs, or suggest features, feel free to open an issue or submit a pull request.
 
 📍 Repository: [https://github.com/rohith8272/mavQT](https://github.com/rohith8272/mavQT)
