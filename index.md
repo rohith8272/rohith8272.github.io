@@ -6,8 +6,6 @@ layout: default
 <link rel="stylesheet" href="dark.css">
 
 
-<h1 align="center">Aeronautical Engineer . UAV Systems . Researcher</h1>
-
 <p align="center">
 
 </p>
