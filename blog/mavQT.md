@@ -114,7 +114,7 @@ If you’d like to improve **mavQT**, report bugs, or suggest features, feel fre
 
 ---
 
-## 🧠 Learn More
+### Reference
 
 - [MAVLink Protocol Documentation](https://mavlink.io/en/)
 - [MQTT Introduction](https://mqtt.org/getting-started/)
@@ -122,6 +122,4 @@ If you’d like to improve **mavQT**, report bugs, or suggest features, feel fre
 
 ---
 
-## 🏷️ License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
