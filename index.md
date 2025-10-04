@@ -1,33 +1,59 @@
 ---
-title: "Rohith Maben"
+title: "👋 Hi, I'm Rohith Maben"
 layout: default
 ---
 
-Welcome to my personal website!  
-I'm an **aeronautical engineer**, and this site is a hub for my **projects**, **technical blogs**, and **academic publications**.
+<img src="/assets/profile.jpg" alt="Rohith Maben" width="120" style="border-radius: 50%; display:block; margin: 0 auto 1rem auto;">
+
+<h1 align="center">Aeronautical Engineer & UAV Systems Researcher</h1>
+
+<p align="center">
+Passionate about autonomous systems, simulation environments, and decision-support tools for UAV operations.  
+This site showcases my projects, publications, and ongoing research.
+</p>
 
 ---
 
-## 🚀 Projects
+## 🚀 Featured Projects
 
-Here are some of the projects I've been working on:
+<table>
+<tr>
+<td width="50%">
+<h3><a href="https://dronesim.xyz">DroneSim</a></h3>
+<p>Cloud-based UAV simulator for ArduPilot and PX4. Spin up a containerized SITL instance and connect with your favorite GCS.</p>
+</td>
+<td width="50%">
+<h3><a href="/projects/log-analyzer">Log Analyzer for ArduPilot</a></h3>
+<p>AI-assisted tool to extract insights from flight log data and generate post-flight reports.</p>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<h3><a href="/projects/thanos-uav">Thanos-UAV Conceptual Design Tool</a></h3>
+<p>Fast parametric design and performance evaluation for small fixed-wing UAVs.</p>
+</td>
+<td width="50%">
+<h3><a href="https://github.com/rohith8272/mavQT">mavQT</a></h3>
+<p>Lightweight tool to connect MAVLink-enabled drones to IoT systems via MQTT.</p>
+</td>
+</tr>
+</table>
 
-- [**DroneSim**](https://dronesim.xyz): A cloud-based UAV simulator for ArduPilot and PX4 vehicles. Spin up a container and connect to your favorite ground station.
-- [**Log Analyzer for ArduPilot**](/projects/log-analyzer): A tool to gain insights from flight log data and generate reports.
-- [**Thanos-UAV Conceptual Design Tool**](/projects/thanos-uav): Fast design and performance evaluation tool for small unmanned fixed-wing aircraft.
-
-➡️ [**View all projects**](/projects)
+<p align="center">
+➡️ <a href="/projects" style="background:#0366d6;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;">View All Projects</a>
+</p>
 
 ---
 
-## 📝 Blog
+## 📝 Blog Highlights
 
-Recent posts:
-- [Getting Started with Pymavlink](https://dronesim.gitbook.io/dronesim-docs/development-tutorials/getting-started-with-pymavlink-connecting-to-a-drone-simulator)
-- [Forwarding MAVLink Packets](https://dronesim.gitbook.io/dronesim-docs/development-tutorials/forwarding-mavlink-packets)
+- [Getting Started with Pymavlink](https://dronesim.gitbook.io/dronesim-docs/development-tutorials/getting-started-with-pymavlink-connecting-to-a-drone-simulator)  
+- [Forwarding MAVLink Packets](https://dronesim.gitbook.io/dronesim-docs/development-tutorials/forwarding-mavlink-packets)  
 - [Setting Up a VPN for UAS Projects Using ZeroTier](https://dronesim.gitbook.io/dronesim-docs/setting-up-a-vpn-for-uas-projects-using-zerotier)
 
-➡️ [See all blog posts](blog.md)
+<p align="center">
+➡️ <a href="/blog" style="background:#0366d6;color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;">Read More Posts</a>
+</p>
 
 ---
 
@@ -37,11 +63,24 @@ Recent posts:
 
 ---
 
-## 📫 Contact
+## 🧠 About Me
 
-You can reach me via [rohith8272@gmail.com](mailto:rohith8272@gmail.com)  
-or connect on [LinkedIn](https://www.linkedin.com/in/rohithmaben).
+I'm an **aeronautical engineer** with research interests in UAV operator performance, autonomous systems, and situational awareness modeling.  
+My work involves developing simulation tools, data analysis systems, and human-machine interface frameworks for improving decision support in complex UAV operations.
 
 ---
 
-*Thanks for visiting!*
+## 📫 Connect
+
+<p align="center">
+<a href="mailto:rohith8272@gmail.com">📧 rohith8272@gmail.com</a>  
+<br>
+<a href="https://www.linkedin.com/in/rohithmaben">💼 LinkedIn</a> • 
+<a href="https://github.com/rohith8272">💻 GitHub</a>
+</p>
+
+---
+
+<footer align="center">
+  © 2025 Rohith Maben • Built with ❤️ using GitHub Pages & Cayman Theme
+</footer>
