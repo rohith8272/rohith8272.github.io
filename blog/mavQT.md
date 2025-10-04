@@ -81,10 +81,11 @@ If you prefer not to run a local broker, you can use a free online MQTT service 
 
 To connect your MAVLink stream to **mavQT**, ensure your flight controller or GCS is sending data to the correct UDP/TCP port.
 
-### Example 1: Using Mission Planner
+#### Example 1: Using Mission Planner
 - Set **UDP outbound** on port **14550**.
+![mirror](mirror.png)
 
-### Example 2: Using MAVProxy
+#### Example 2: Using MAVProxy
 ```bash
 mavproxy --master=tcp:127.0.0.1:5760 --out 127.0.0.1:14550
 ```
