@@ -80,6 +80,7 @@ If you prefer not to run a local broker, you can use a free online MQTT service 
 ### Forwarding MAVLink Streams
 
 To connect your MAVLink stream to **mavQT**, ensure your flight controller or GCS is sending data to the correct UDP/TCP port.
+If you haven't set up Software in the Loop(SITL) simulations before, you can use: https://dronesim.xyz/
 
 #### Example 1: Using Mission Planner
 - Set **UDP outbound** on port **14550**.
