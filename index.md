@@ -1,5 +1,5 @@
 ---
-title: "👋 Hi, I'm Rohith Maben"
+title: "Rohith Maben"
 layout: default
 ---
 
