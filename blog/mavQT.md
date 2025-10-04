@@ -5,7 +5,7 @@ It allows you to **receive, display, and forward MAVLink messages in real time**
 
 ---
 
-## Features
+### Features
 
 - Connect to **UDP/TCP MAVLink streams** from drones  
 - Forward MAVLink messages to any **MQTT broker**  
@@ -14,7 +14,7 @@ It allows you to **receive, display, and forward MAVLink messages in real time**
 
 ---
 
-## Installation and Setup
+### Installation and Setup
 
 1. **Clone the repository:**
    ```bash
@@ -36,7 +36,7 @@ It allows you to **receive, display, and forward MAVLink messages in real time**
 
 ---
 
-## Setting Up an MQTT Broker
+### Setting Up an MQTT Broker
 
 Before running **mavQT**, ensure that an MQTT broker is available to receive MAVLink packets.
 
