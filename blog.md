@@ -10,6 +10,8 @@ Welcome to the blog! Here you’ll find write-ups and insights from various proj
 - [📡 Plugin for Mission Planner GCS](blog/MP_plugins.md)  
   Extending Mission Planner functionality without rebuilding the project.
 
+- [📡 mavQT-MAVLink to MQTT bridge](blog/MP_plugins.md)  
+  Lightweight tool to enable MAVLink drones to communicate with IoT devices and cloud applications over MQTT.
 ---
 
 _Return to the [home page](index.md)._
