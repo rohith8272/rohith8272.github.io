@@ -12,4 +12,4 @@ Welcome to the blog! Here you’ll find write-ups and insights from various proj
 
 ---
 
-_Need help navigating? Return to the [home page](index.md)._
+_Return to the [home page](index.md)._
