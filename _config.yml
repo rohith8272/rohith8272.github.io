@@ -1,16 +1,6 @@
-
-
-theme: minima
-
-# Enable minima dark mode
-minima:
-  skin: dark
-  include_css:
-    - /assets/css/custom.css
-    
-markdown: kramdown
-highlighter: rouge
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+title: "Rohith Maben"
+description: "Aeronautical Engineer • UAV Systems • Researcher"
+theme: jekyll-theme-cayman
+github:
+  is_project_page: false
+  is_user_page: true
