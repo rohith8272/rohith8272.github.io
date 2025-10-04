@@ -1,6 +1,6 @@
 title: "Rohith Maben"
 description: "Aeronautical Engineer • UAV Systems • Researcher"
-theme: jekyll-theme-cayman
+theme: jekyll-theme-modernist
 show_downloads: false
 
 # Optional customization
@@ -10,5 +10,4 @@ social_links:
   github: "https://github.com/rohith8272"
   email: "rohith8272@gmail.com"
 
-# Optional logo
-logo: /assets/profile.jpg
+
