@@ -1,6 +1,6 @@
 body {
-  background-color: #0e0e10;
-  color: #dcdcdc;
+  background-color: #f5f5f5;      /* Light grey background */
+  color: #333;                    /* Dark grey text for readability */
   font-family: "Inter", "Segoe UI", sans-serif;
   line-height: 1.6;
   max-width: 800px;
@@ -9,22 +9,24 @@ body {
 }
 
 h1, h2, h3 {
-  color: #fff;
+  color: #111;                    /* Slightly darker headings */
   font-weight: 600;
+  margin-top: 1.5rem;
 }
 
 a {
-  color: #58a6ff;
+  color: #555;                    /* Subtle link color */
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #000;                     /* Slight emphasis on hover */
 }
 
 hr {
   border: none;
-  border-top: 1px solid #2a2a2d;
+  border-top: 1px solid #ccc;      /* Light grey separator */
   margin: 2rem 0;
 }
 
@@ -35,30 +37,41 @@ img {
 }
 
 p, li {
-  color: #bfbfbf;
+  color: #555;                     /* Medium grey text */
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;          /* Minimal table borders */
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
 }
 
 .button {
   display: inline-block;
-  background: #58a6ff;
+  background: #888;                 /* Muted grey button */
   color: #fff;
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 6px;
   margin-top: 8px;
   text-decoration: none;
+  transition: background 0.2s ease;
 }
 
 .button:hover {
-  background: #1f6feb;
+  background: #555;                 /* Slightly darker hover */
 }
 
 footer {
   text-align: center;
   margin-top: 3em;
   font-size: 0.9em;
-  color: #666;
+  color: #777;                      /* Muted footer text */
 }
