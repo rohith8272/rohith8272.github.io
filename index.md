@@ -1,6 +1,5 @@
 ---
 layout: home
-title: ""
 ---
 
 # 👋 Hi, I'm Rohith Maben
