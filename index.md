@@ -17,7 +17,6 @@ layout: default
 - [**DroneSim**](https://dronesim.xyz): Cloud-based UAV simulator for ArduPilot and PX4.  
 - [**Log Analyzer for ArduPilot**](/projects/log-analyzer): AI-assisted log analysis and flight insight tool.  
 - [**Thanos-UAV Design Tool**](/projects/thanos-uav): Conceptual design and performance evaluation for small UAVs.  
-- [**mavQT**](https://github.com/rohith8272/mavQT): Lightweight MAVLink–MQTT bridge for IoT edge integration.
 
 
 
@@ -28,9 +27,9 @@ layout: default
 - [Getting Started with Pymavlink](https://dronesim.gitbook.io/dronesim-docs/development-tutorials/getting-started-with-pymavlink-connecting-to-a-drone-simulator)
 - [Forwarding MAVLink Packets](https://dronesim.gitbook.io/dronesim-docs/development-tutorials/forwarding-mavlink-packets)
 - [Setting Up a VPN for UAS Projects Using ZeroTier](https://dronesim.gitbook.io/dronesim-docs/setting-up-a-vpn-for-uas-projects-using-zerotier)
-- [📡 Setting up Ardupilot Software in the Loop](blog/AP_sitl_01.md)  
-- [📡 Plugin for Mission Planner GCS](blog/MP_plugins.md)  
-- [📡 mavQT-MAVLink to MQTT bridge](blog/mavQT.md)  
+- [Setting up Ardupilot Software in the Loop](blog/AP_sitl_01.md)  
+- [Plugin for Mission Planner GCS](blog/MP_plugins.md)  
+- [mavQT-MAVLink to MQTT bridge](blog/mavQT.md)  
 
 ---
 
