@@ -3,6 +3,8 @@
 **mavQT** is a lightweight Python tool that connects **MAVLink-enabled drones** to **IoT systems** via **MQTT**.  
 It allows you to **receive, display, and forward MAVLink messages in real time** to an MQTT broker, enabling seamless data streaming to cloud and edge devices.
 
+![MP+mavQT](mavQT.jpg)
+
 ---
 
 ### Features
