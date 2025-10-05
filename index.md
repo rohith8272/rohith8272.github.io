@@ -33,9 +33,10 @@ layout: default
 
 ---
 
-## 📚 Publications
+## 📚 Publications and tutorials
 
 - [Framework for Assessing Situational Awareness in BVLOS UAV Operations](https://dl.acm.org/doi/10.5555/3721488.3721702)
+- [Post processing LiDAR data with Cloud Compare](https://doi.org/10.5281/zenodo.13253683)
 
 ---
 
