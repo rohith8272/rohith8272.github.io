@@ -2,8 +2,8 @@
 
 **mavQT** is a lightweight Python tool that connects **MAVLink-enabled drones** to **IoT systems** via **MQTT**.  
 It allows you to **receive, display, and forward MAVLink messages in real time** to an MQTT broker, enabling seamless data streaming to cloud and edge devices.
+![flow](flow.png)
 
-![MP+mavQT](mavQT.png)
 
 ---
 
@@ -106,6 +106,7 @@ Example usage:
 ```bash
 python -m mavQT
 ```
+![MP+mavQT](mavQT.png)
 On connection to an active MAVLink stream, new messages are auto discovered. I can now check the messages that I would like to broadcast with the custom topic name (default mavlink/msg). The bottom terminal should now show the client topics. You can also recieve the topics on any device with an mqtt client within the network or using a VPN.
 
 The MAVLink packets are sent as soon as they are received by the tool, while it is also possible to set a time interval and QoS level. 
