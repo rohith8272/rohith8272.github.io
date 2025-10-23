@@ -115,18 +115,6 @@ Create Virtual Device. Go to Tools—> device manager→ create virtual device. 
 ![im1](atak01/atak07.png)
 ![im1](atak01/atak08.png)
 
-🚫 The Google Play ATAK app will not load custom plugins. Use the developer ATAK APK from the SDK instead.
-
-check errors on the terminal with adb: 
-```bash
-adb logcat | grep -i "helloworld”
-```
-
-If you have a tablet to try it out: send both the apk files and install them
-
-
-
-
 ### Notes
 1. The **Google Play version** of ATAK **does not load custom plugins**.  
 To test your plugin, use the **developer ATAK APK** included in the **ATAK SDK** instead.
