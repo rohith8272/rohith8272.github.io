@@ -26,6 +26,7 @@ Then open the **SDK Manager** and ensure that **API level 21** (Android 5.0) is 
 > 💡 Even if you already have newer SDKs, API 21 is required for ATAK builds.
 
 ---
+![flow](atak01/atak.png)
 
 ## 2. Clone the ATAK SDK
 
