@@ -29,7 +29,9 @@ layout: default
 - [Setting Up a VPN for UAS Projects Using ZeroTier](https://dronesim.gitbook.io/dronesim-docs/setting-up-a-vpn-for-uas-projects-using-zerotier)
 - [Setting up Ardupilot Software in the Loop](blog/AP_sitl_01.md)  
 - [Plugin for Mission Planner GCS](blog/MP_plugins.md)  
-- [mavQT-MAVLink to MQTT bridge](blog/mavQT.md)  
+- [mavQT-MAVLink to MQTT bridge](blog/mavQT.md) 
+- [ATAK Plugin- Setting up the build environment](blog/atak_01.md)  
+
 
 ---
 
