@@ -148,3 +148,7 @@ adb logcat | grep -i "helloworld"
 
 5. Here is the original tutorial I used to setup my plugin:
    [link](https://www.riis.com/blog/atak-plugins-part-1)
+
+
+
+_Return to the [home page](index.md)._
