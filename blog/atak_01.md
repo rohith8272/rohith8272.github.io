@@ -1,4 +1,4 @@
-# Making an ATAK Plugin — Quick Start Guide
+# Working with ATAK 01-Plugins
 
 This short guide walks through the minimal steps to build and install a simple **HelloWorld** ATAK plugin using the **ATAK-CIV SDK**.  
 It assumes you have a working development machine and some basic Android Studio experience.
@@ -26,7 +26,6 @@ Then open the **SDK Manager** and ensure that **API level 21** (Android 5.0) is 
 > 💡 Even if you already have newer SDKs, API 21 is required for ATAK builds.
 
 ---
-![flow](atak01/atak.png)
 
 ## 2. Clone the ATAK SDK
 
@@ -41,7 +40,11 @@ Inside this repo, locate the plugin-examples folder — it includes several work
 
 Copy the helloworld example from the SDK into your working plugins folder, or open it directly in Android Studio.
 
+
 The HelloWorld plugin is a good starting point because it demonstrates the basic structure of an ATAK plugin project.
+
+![im1](atak01/atak0.png)
+
 
 ## 4. Generate a Signing Key (Keystore)
 
@@ -61,6 +64,7 @@ keytool -genkeypair \
 ```
 
 ## 5. Update the key locations
+Update local.properties file
 
 ```bash
 sdk.dir=/home/aviondock/Android/Sdk
@@ -74,10 +78,53 @@ takReleaseKeyFilePassword=android
 takReleaseAlias=androidreleasekey
 takDebugKeyPassword=android
 ```
-## 6. Select the Correct Build Variant
+
+## 6.Versions for gradle
+
+Open the `<PLUGIN-NAME>/app/build.gradle` file by set the Project Files view to “Project”, expand the app directory and click the `build.gradle` file. On line 16 there should be a line of code that we need to change since the def function is not properly scoped to be used later in the build script.
+
+```
+// app/build.gradle
+// Original function signature
+def getValueFromPropertiesFile = { propFile, key ->
+
+// New function signature
+ext.getValueFromPropertiesFile = { propFile, key ->
+```
+Under prject structure set the following versions:
+![im1](atak01/atak01.png)
+Go to "File > Settings > Build, Execution, Deployment > Build Tools > Gradle > Gradle JDK" and make sure you are using Java 11, if you don't have it, install it. Sync project with gradle files with all the changes that we did and update the file configuration.
+![im1](atak01/atak02.png)
+
+
+![im1](atak01/atak03.png)
+
+## 7. Select the Correct Build Variant
 
 In Android Studio, open the Build Variants panel (bottom-left corner).
 Select the variant civDebug — this matches the developer ATAK build shipped in the SDK.
+![im1](atak01/atak05.png)
+Sync gradle and assemble plugin run configuration(hammer icon)
+
+![im1](atak01/atak06.png)
+
+## 8. Test the plugin
+
+Now we ready to run and test out the plugin!
+Create Virtual Device. Go to Tools—> device manager→ create virtual device
+
+![im1](atak01/atak07.png)
+![im1](atak01/atak08.png)
 
 🚫 The Google Play ATAK app will not load custom plugins.
 Use the developer ATAK APK from the SDK instead.
+
+check errors on the terminal with adb: 
+```bash
+adb logcat | grep -i "helloworld”
+```
+
+If you have a tablet to try it out: send both the apk files and install them
+
+Add maps by loading data packages:  drag and drop the zip files from here: https://github.com/joshuafuller/ATAK-Maps
+
