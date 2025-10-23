@@ -20,7 +20,7 @@ Welcome to the blog! Here you’ll find write-ups and insights from various proj
   Lightweight tool to enable MAVLink drones to communicate with IoT devices and cloud applications over MQTT.
 
 
-- [📡ATAK Plugin Setup](blog/atak01.md)  
+- [📡ATAK Plugin Setup](blog/atak_01.md)  
   Environment setup to build your own ATAK plugin.
 
 
