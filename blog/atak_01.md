@@ -1,7 +1,6 @@
 # Working with ATAK 01-Plugins
 
-This short guide walks through the minimal steps to build and install a simple **HelloWorld** ATAK plugin using the **ATAK-CIV SDK**.  
-It assumes you have a working development machine and some basic Android Studio experience.
+This short guide walks through the minimal steps to build and install a simple **HelloWorld** ATAK plugin using the **ATAK-CIV SDK**. It assumes you have a working development machine and some basic Android Studio experience.
 
 ---
 
