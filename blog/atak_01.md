@@ -118,23 +118,25 @@ Create Virtual Device. Go to Tools—> device manager→ create virtual device. 
 ### Notes
 1. The **Google Play version** of ATAK **does not load custom plugins**.  
 To test your plugin, use the **developer ATAK APK** included in the **ATAK SDK** instead.
-**Installation on a Tablet** If you have a tablet available:
+
+2. **Installation on a Tablet** If you have a tablet available:
 Send both .apk files (the ATAK developer build and your plugin).
 Install them in order — ATAK first, then your plugin.
 
 
 
-2 .Check for errors in the terminal using:
+3. Check for errors in the terminal using:
 ```bash
 adb logcat | grep -i "helloworld"
 ```
-3. I had to change the android apk version here:
+
+4. I had to change the android apk version here:
 ![im1](atak01/atak04.png)
 
 
-4. Add maps by loading data packages:  drag and drop the zip files from here: https://github.com/joshuafuller/ATAK-Maps
+5. Add maps by loading data packages:  drag and drop the zip files from here: https://github.com/joshuafuller/ATAK-Maps
 
-5. Here is the original tutorial I used to setup my plugin:
+6. Here is the original tutorial I used to setup my plugin:
    [link](https://www.riis.com/blog/atak-plugins-part-1)
 
 
