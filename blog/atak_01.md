@@ -10,11 +10,11 @@ It assumes you have a working development machine and some basic Android Studio 
 Before starting, make sure you have:
 
 - **Android Studio** (latest stable version)  
-  👉 [Download from developer.android.com/studio](https://developer.android.com/studio)  
+[Download from developer.android.com/studio](https://developer.android.com/studio)  
 - **Android SDK Platform 21** (Android 5.0 / Lollipop)  
   ATAK requires **API level 21** or higher.  
 - **ATAK-CIV SDK**  
-  👉 [GitHub – deptofdefense/AndroidTacticalAssaultKit-CIV](https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV)
+[GitHub – deptofdefense/AndroidTacticalAssaultKit-CIV](https://github.com/deptofdefense/AndroidTacticalAssaultKit-CIV)
 
 ---
 
@@ -101,23 +101,21 @@ Go to "File > Settings > Build, Execution, Deployment > Build Tools > Gradle > G
 
 ## 7. Select the Correct Build Variant
 
-In Android Studio, open the Build Variants panel (bottom-left corner).
-Select the variant civDebug — this matches the developer ATAK build shipped in the SDK.
+In Android Studio, open the Build Variants panel (bottom-left corner). Select the variant civDebug — this matches the developer ATAK build shipped in the SDK. Sync gradle and assemble plugin run configuration(hammer icon)
+
 ![im1](atak01/atak05.png)
-Sync gradle and assemble plugin run configuration(hammer icon)
 
 ![im1](atak01/atak06.png)
 
 ## 8. Test the plugin
 
 Now we ready to run and test out the plugin!
-Create Virtual Device. Go to Tools—> device manager→ create virtual device
+Create Virtual Device. Go to Tools—> device manager→ create virtual device. You can now drag and drop both the developer ATAK apk and the hellow world plugin apk on the device.
 
 ![im1](atak01/atak07.png)
 ![im1](atak01/atak08.png)
 
-🚫 The Google Play ATAK app will not load custom plugins.
-Use the developer ATAK APK from the SDK instead.
+🚫 The Google Play ATAK app will not load custom plugins. Use the developer ATAK APK from the SDK instead.
 
 check errors on the terminal with adb: 
 ```bash
@@ -126,5 +124,27 @@ adb logcat | grep -i "helloworld”
 
 If you have a tablet to try it out: send both the apk files and install them
 
-Add maps by loading data packages:  drag and drop the zip files from here: https://github.com/joshuafuller/ATAK-Maps
 
+
+
+### Notes
+1. The **Google Play version** of ATAK **does not load custom plugins**.  
+To test your plugin, use the **developer ATAK APK** included in the **ATAK SDK** instead.
+**Installation on a Tablet** If you have a tablet available:
+Send both .apk files (the ATAK developer build and your plugin).
+Install them in order — ATAK first, then your plugin.
+
+
+
+2 .Check for errors in the terminal using:
+```bash
+adb logcat | grep -i "helloworld"
+```
+3. I had to change the android apk version here:
+![im1](atak01/atak04.png)
+
+
+4. Add maps by loading data packages:  drag and drop the zip files from here: https://github.com/joshuafuller/ATAK-Maps
+
+5. Here is the original tutorial I used to setup my plugin:
+   [link](https://www.riis.com/blog/atak-plugins-part-1)
