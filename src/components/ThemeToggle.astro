@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<theme-toggle class="ms-2 sm:ms-4">
+  <button
+    type="button"
+    id="toggle-theme"
+    class="relative h-9 w-9 rounded-md p-2 ring-zinc-400 transition-all hover:ring-2"
+    aria-label="Toggle Dark Mode"
+  >
+    <span class="sr-only">Dark Theme</span>
+
+    <Icon
+      class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 scale-100 opacity-100 transition-all dark:scale-0 dark:opacity-0"
+      name="teenyicons:sun-outline"
+      aria-hidden="true"
+      focusable="false"
+    />
+
+    <Icon
+      class="absolute start-1/2 top-1/2 h-5 w-5 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all dark:scale-100 dark:opacity-100"
+      name="teenyicons:moon-outline"
+      aria-hidden="true"
+      focusable="false"
+    />
+  </button>
+</theme-toggle>
+
+<script>
+  // Note that if you fire the theme-change event outside of this component, it will not be reflected in the button's aria-checked attribute. You will need to add an event listener if you want that.
+  import { rootInDarkMode } from "@/utils";
+
+  class ThemeToggle extends HTMLElement {
+    connectedCallback() {
+      const button = this.querySelector<HTMLButtonElement>("button")!;
+      // set aria role value
+      button.setAttribute("role", "switch");
+      button.setAttribute("aria-checked", String(rootInDarkMode()));
+
+      // button event
+      button.addEventListener("click", () => {
+        // invert theme
+        let themeChangeEvent = new CustomEvent("theme-change", {
+          detail: {
+            theme: rootInDarkMode() ? "light" : "dark",
+          },
+        });
+        // dispatch event -> ThemeProvider.astro
+        document.dispatchEvent(themeChangeEvent);
+
+        // set the aria-checked attribute
+        button.setAttribute("aria-checked", String(rootInDarkMode()));
+      });
+    }
+  }
+
+  customElements.define("theme-toggle", ThemeToggle);
+</script>

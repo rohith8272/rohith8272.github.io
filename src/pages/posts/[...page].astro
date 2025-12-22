@@ -1,0 +1,89 @@
+---
+import type { Page, GetStaticPaths } from "astro";
+import type { CollectionEntry } from "astro:content";
+import PageLayout from "@/layouts/Base";
+import PostPreview from "@/components/blog/PostPreview";
+import Pagination from "@/components/Paginator";
+import { getAllPosts, getUniqueTagsWithCount, sortMDByDate } from "@/utils";
+import { siteConfig } from "@/site-config";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = await getAllPosts();
+  const allPostsByDate = sortMDByDate(allPosts);
+  const uniqueTags = getUniqueTagsWithCount(allPosts)
+    .slice(0, 10)
+    .map(([tag, _count]) => tag);
+  return paginate(allPostsByDate, { props: { uniqueTags }, pageSize: siteConfig.postsPerPage });
+}) satisfies GetStaticPaths;
+
+interface Props {
+  page: Page<CollectionEntry<"post">>;
+  uniqueTags: string[];
+}
+
+const { page, uniqueTags }: Props = Astro.props;
+
+const meta = {
+  title: "Posts",
+  description: "A collection of posts about programming, design, and other things.",
+};
+
+const paginationProps = {
+  ...(page.url.prev && {
+    prevUrl: {
+      url: page.url.prev,
+      text: `← Previous Posts`,
+    },
+  }),
+  ...(page.url.next && {
+    nextUrl: {
+      url: page.url.next,
+      text: `Next Posts →`,
+    },
+  }),
+};
+---
+
+<PageLayout meta={meta}>
+  <h1 class="title mb-6">Posts</h1>
+  <div class="grid gap-y-16">
+    {
+      !!uniqueTags.length && (
+        <section>
+          <div class="flex items-start space-x-4">
+            <ul class="flex flex-wrap gap-2 text-xs leading-normal">
+              <li>Filter posts by</li>
+              {uniqueTags.map((tag) => (
+                <li>
+                  <a
+                    class="cactus-link opacity-70"
+                    href={`/tags/${tag}/`}
+                    aria-label={`View other posts with the tag ${tag}`}
+                  >
+                    {tag}
+                  </a>
+                </li>
+              ))}
+              <span>or</span>
+              <a href="/tags/" class="opacity-70 hover:cactus-link" aria-label="View all tags">
+                view all tags
+              </a>
+            </ul>
+          </div>
+        </section>
+      )
+    }
+    <section aria-label="Blog post list">
+      <ul class="space-y-8 text-start">
+        {
+          page.data.map((p) => (
+            <li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
+              <PostPreview post={p} as="h2" withDesc />
+            </li>
+          ))
+        }
+      </ul>
+      <Pagination {...paginationProps} />
+    </section>
+  </div>
+</PageLayout>
