@@ -2,6 +2,7 @@
 import PageLayout from "@/layouts/Base";
 import SocialList from "@/components/SocialList";
 import Link from "@/components/Link";
+
 const meta = {
   title: "About",
   description: "Find out more about me and my work.",
@@ -12,21 +13,52 @@ const meta = {
   <div class="space-y-6">
     <h1 class="title">About</h1>
     <p>
-      I'm currently a software engineer in London, working at <Link href="https://automata.tech">
-        Automata
-      </Link>
-       developing a robotic lab automation platform.
-    </p>
-    <p>
-      I studied mechanical engineering at the <Link href="https://www.bath.ac.uk/">
-        University of Bath
-      </Link>, but have an interest in biomedical engineering, electronic engineering, and computer
-      science.
+      Hi! I’m currently a Research Engineer at the <Link href="https://www.flyg.lth.se/tfhs">
+        Commercial Aviation Academy (Lund University)
+      </Link>, working at the intersection of UAV design, simulation, and human–robot interaction.
     </p>
 
+    <h2 class="title text-lg">Research & Technical Focus</h2>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Model-Based Systems Engineering (MBSE)</li>
+      <li>UAV prototyping and flight testing (fixed-wing, VTOL, and multirotor platforms)</li>
+      <li>Conceptual aircraft design: configuration aerodynamics, stability & control, and simulation</li>
+      <li>Trajectory optimization for unmanned aerial vehicles</li>
+    </ul>
+
+    <h2 class="title text-lg">Key Skills</h2>
+    <div class="space-y-4">
+      <div>
+        <h3 class="font-semibold">Aerodynamics & Design</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Product Modelling: CATIA V5, SolidWorks <br/>
+          Aerodynamic Analysis: XFLR5, Tornado, AVL, OpenVSP <br/>
+          Computational Fluid Dynamics: ICEM-CFD, ANSYS Fluent, CFX
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Systems & Simulation</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Programming & Systems: MATLAB, Simulink, Python, C++, Hopsan, SysML <br/>
+          Optimization Tools: ModeFrontier, MATLAB <br/>
+          6-DOF Modeling & Simulation: Simulink, MATLAB, FlightGear, X-Plane, RealFlight
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold">Robotics & Avionics</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+          Autopilot Stack: ArduPilot, PX4, ROS/ROS2, Gazebo, MAVLink <br/>
+          Ground Control & Hardware: Mission Planner, QGroundControl, Pixhawk, ArduPilot boards, Naze32, CC3D
+        </p>
+      </div>
+    </div>
+
     <p>
-      I enjoy learning new things, whether thats how to produce music, or a new programming language
-      to me like <Link href="/tags/rust/">Rust</Link>.
+      I studied aeronautical engineering at <Link href="https://liu.se/en">
+        Linköping University
+      </Link>, and I enjoy exploring new technologies, whether that's learning a new programming language like <Link href="/tags/rust/">Rust</Link> or diving into music production.
     </p>
 
     <SocialList
@@ -35,12 +67,12 @@ const meta = {
         {
           name: "teenyicons:linkedin-outline",
           friendlyName: "LinkedIn",
-          link: "https://www.linkedin.com/in/paul-lavender-jones/",
+          link: "https://www.linkedin.com/in/rohithmaben/",
         },
         {
           name: "teenyicons:envelope-outline",
           friendlyName: "email",
-          link: "mailto:paul@lavender-jones.com",
+          link: "mailto:rohith8272@gmail.com",
         },
       ]}
     />
