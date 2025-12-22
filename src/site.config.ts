@@ -2,9 +2,9 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
   // Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-  author: "Paul Lavender-Jones",
+  author: "Rohith Prem Maben",
   // Meta property used to construct the meta title property, found in src/components/BaseHead.astro L:11
-  title: "paullj",
+  title: "rohith",
   // Meta property used as the default description meta property
   description: "A personal website where I write about things I find interesting",
   // HTML lang property, found in src/layouts/Base.astro L:18
@@ -50,19 +50,19 @@ export const socialLinks: Array<{
   link: string;
   isWebmention?: string;
 }> = [
-  {
-    name: "teenyicons:github-outline",
-    friendlyName: "Github",
-    link: "https://github.com/paullj",
-  },
-  {
-    name: "teenyicons:linkedin-outline",
-    friendlyName: "LinkedIn",
-    link: "https://www.linkedin.com/in/paul-lavender-jones/",
-  },
-  {
-    name: "teenyicons:envelope-outline",
-    friendlyName: "email",
-    link: "mailto:paul@lavender-jones.com",
-  },
-];
+    {
+      name: "teenyicons:github-outline",
+      friendlyName: "Github",
+      link: "https://github.com/rohith8272",
+    },
+    {
+      name: "teenyicons:linkedin-outline",
+      friendlyName: "LinkedIn",
+      link: "https://www.linkedin.com/in/rohithmaben/",
+    },
+    {
+      name: "teenyicons:envelope-outline",
+      friendlyName: "email",
+      link: "mailto:rohith8272@gmail.com",
+    },
+  ];
