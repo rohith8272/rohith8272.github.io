@@ -1,0 +1,166 @@
+---
+title: Getting started with Mission Planner plugins
+description: Building simple C# extensions to explore, visualize, and automate missions.
+publishedAt: 10 January 2026
+tags:
+  - Mission Planner
+  - ArduPilot
+  - CSharp
+  - MAVLink
+***
+
+## Installation and Setup
+
+1. **Install Mission Planner and locate the plugin folder**
+
+   - Download and install Mission Planner for Windows from the official ArduPilot Mission Planner page.[1]
+   - After installation, open the Mission Planner install directory (for example: `C:\Program Files (x86)\Mission Planner`).[2]
+   - Inside this folder there is a `plugins` directory where custom `.cs` plugin files can be dropped and compiled on startup.
+
+2. **Clone the plugin example repository**
+
+   ```bash
+   git clone https://github.com/rohith8272/missionplanner-plugin-example.git
+   cd missionplanner-plugin-example
+   ```
+   - The repository contains several **toy** plugins demonstrating UI integration, MAVLink message handling, and mission editing with C#.
+
+3. **Copy an example plugin into Mission Planner**
+
+   - From the cloned repo, open the `examples` folder and pick any `.cs` file (for example `MapMarker.cs`).  
+   - Copy the chosen `.cs` file into the `MissionPlanner/plugins/` directory in your Mission Planner install path.  
+   - Restart Mission Planner so it discovers and compiles the new plugin on startup.[3]
+
+4. **Enable the plugin in Mission Planner**
+
+   - In Mission Planner, open the Plugin Manager using `CTRL + P`.  
+   - Locate your plugin by the `Name` property defined in the class (for example **"Simple Map Marker"**).[1]
+   - Enable the plugin and restart Mission Planner if requested so it loads cleanly.
+
+***
+
+## Simple Map Marker plugin
+
+The `MapMarker.cs` example shows how to embed a small UI panel into the **Flight Data** view and interact with the map control.[1]
+
+1. **UI elements in the quick panel**
+
+   - The plugin creates labels and text boxes for **Lat** and **Lon**, and a `Set Marker` button.[1]
+   - It locates the `tableLayoutPanelQuick` control inside `FlightData` and adds the new controls into the existing layout so they appear alongside standard Mission Planner widgets.[1]
+
+2. **Placing a marker on the map**
+
+   - A `GMapOverlay` named `"markers"` is created and attached to `Host.FDGMapControl.Overlays`.[4][1]
+   - When the button is clicked, the plugin parses the latitude and longitude from the text boxes, clears existing markers, adds a new `GMarkerGoogle` at the given coordinates, recenters the map on that point, and refreshes the control.[5][1]
+
+3. **How to use it**
+
+   - Start Mission Planner with the plugin enabled and go to the **Flight Data** tab.[1]
+   - In the quick panel, enter a latitude and longitude (for example `37.7749`, `-122.4194`) and click `Set Marker` to drop a red marker at that location and center the view.[1]
+
+***
+
+## Custom mission library plugin
+
+`Custom-WP.cs` implements a **mission library** menu entry that can quickly preload a set of waypoints into the Flight Planner.[6]
+
+1. **Adding a menu item to the Flight Plan view**
+
+   - On load, the plugin creates a `ToolStripMenuItem` called `"Mission library"` and attaches it to `Host.FPMenuMap` (the Flight Planner map menu).[6]
+   - It also caches a reference to the `Commands` grid (`MyDataGridView`) in the Flight Planner UI to manipulate the visible mission list.[6]
+
+2. **Inserting custom waypoints**
+
+   - When the menu item is clicked, the plugin displays a `CustomMessageBox` prompt indicating that it will load common flight plans.[6]
+   - A small array of waypoints `(lat, lon, alt)` is defined and the current mission is cleared using `clearMissionToolStripMenuItem_Click` on the main form.[6]
+
+3. **Syncing with the mission list UI**
+
+   - For each waypoint, the plugin calls `Host.InsertWP` to populate the internal mission with `MAV_CMD.WAYPOINT` commands, and then uses `Host.AddWPtoList` so the waypoints appear in the mission grid.[7][6]
+   - Finally, it removes the first row in the `Commands` grid if present, cleaning up any placeholder row left by Mission Planner.[6]
+
+4. **How to use it**
+
+   - Enable the plugin, open the **Flight Plan** tab, and right‑click on the map or open the planner menu where `"Mission library"` appears.[6]
+   - Clicking it replaces the current mission with the preconfigured waypoint sequence, ready to upload to the vehicle after review.[8][6]
+
+***
+
+## GPS MAVLink console plugin
+
+`GPS-console.cs` demonstrates how to subscribe to raw MAVLink messages and log them directly to the console from within Mission Planner.[3]
+
+1. **Registering a GPS RAW listener**
+
+   - When the plugin initializes, it adds a `"Start GPS RAW Listener"` menu item to the **Flight Data** map menu (`Host.FDMenuMap`).[3]
+   - Clicking this item subscribes to `MainV2.comPort.OnPacketReceived` and logs that it is listening for `GPS_RAW_INT` messages.[9][3]
+
+2. **Handling incoming packets**
+
+   - The `OnComPortOnOnPacketReceived` handler checks if the message ID is `MAVLINK_MSG_ID.GPS_RAW_INT` and casts the payload to `mavlink_gps_raw_int_t`.[10][3]
+   - It converts the raw integers into SI units (latitude and longitude divided by `1e7`, altitude from millimeters to meters) and prints a formatted line with position and satellite count.[3]
+
+3. **How to use it**
+
+   - Connect Mission Planner to a vehicle or SITL instance that publishes `GPS_RAW_INT`.[11]
+   - Trigger `"Start GPS RAW Listener"`, then use the Mission Planner console (or debug output in your IDE) to watch the incoming GPS data stream in real time.[3]
+
+***
+
+## Exploring the Mission Planner UI tree
+
+`Panelexplorer.cs` is a small introspection tool that prints out the control hierarchy of the **Flight Data** tab.[2]
+
+1. **Dumping UI controls**
+
+   - On `Loaded`, the plugin writes a header and then calls `DumpControls` on `Host.MainForm.FlightData`.[2]
+   - `DumpControls` iterates through each child control, logs its `Name` and type, and recurses into its children with indentation to show nesting.[2]
+
+2. **Why this is useful**
+
+   - Mission Planner’s WinForms layout is large and often undocumented at the control level, so discovering names like `tableLayoutPanelQuick` or `FDGMapControl` can be difficult.[2][1]
+   - Running Panel Explorer gives a live map of what controls exist, making it easier to inject custom widgets into the right panel without digging through the entire source tree.[2][6]
+
+3. **How to use it**
+
+   - Enable **Panel Explorer** and open the **Flight Data** tab.[2]
+   - Check the console output (Visual Studio debug window or standard output) to see the full hierarchy, then reuse those control names in your own plugins to position inputs, charts, or overlays.[12][2]
+
+***
+
+## Tips for developing your own plugins
+
+1. **Use the Plugin base class**
+
+   - All examples derive from `MissionPlanner.Plugin.Plugin` and override `Name`, `Version`, `Author`, and lifecycle methods (`Init`, `Loaded`, `Loop`, `Exit`).[3][6][1][2]
+   - `Host` exposes key objects like `MainForm`, `FDGMapControl`, `FPMenuMap`, and `FDMenuMap`, giving access to both UI elements and the active MAVLink connection.[3]
+
+2. **Iterate quickly with single‑file plugins**
+
+   - For early experiments, copying a single `.cs` file into `MissionPlanner/plugins/` and restarting is enough to test small UI or MAVLink ideas.  
+   - Once a plugin grows, clone the official Mission Planner source, open it in Visual Studio, and add your plugin to a dedicated project so you can debug with breakpoints.[6][2]
+
+3. **Common patterns from the examples**
+
+   - **UI injection:** Use `Controls.Find` with known names (for example `"tableLayoutPanelQuick"` or `"Commands"`) to attach new controls into existing layouts.[1][6]
+   - **Map overlays:** Create `GMapOverlay` instances, manage markers, and recenter the map for visual feedback on geographic data.[5][1]
+   - **Mission editing:** Use helpers like `InsertWP` and `AddWPtoList` to keep the internal mission and planner UI in sync.[7][6]
+   - **MAVLink streaming:** Subscribe to `OnPacketReceived` to inspect specific messages and prototype analytics or logging tools before integrating them more deeply.[9][3]
+
+Because the repository is MIT‑licensed, you are free to copy, modify, and redistribute these example plugins in your own Mission Planner workflows as long as you include the license notice.[12]
+
+[1](https://ardupilot.org/planner/)
+[2](https://github.com/ArduPilot/MissionPlanner)
+[3](https://github.com/ArduPilot/MissionPlanner/blob/master/Plugin/Plugin.cs)
+[4](https://github.com/ArduPilot/MissionPlanner/blob/master/ExtLibs/GMap.NET.WindowsForms/GMap.NET.WindowsForms/GMapControl.cs)
+[5](http://www.independent-software.com/gmap-net-beginners-tutorial-adding-clickable-markers-to-your-map-updates-for-vs2015-and-gmap-1-7.html)
+[6](https://ardupilot.org/dev/docs/building-mission-planner.html)
+[7](https://github.com/ArduPilot/MissionPlanner/blob/master/Utilities/POI.cs)
+[8](https://docs.inspiredflight.com/inspired-documentation/products/additional-software/mission-planner/mission-planner-quick-mission-setup)
+[9](https://github.com/ArduPilot/MissionPlanner/blob/master/Scripts/example10.py)
+[10](https://discuss.px4.io/t/how-to-send-gps-raw-int-message-to-flight-controller/32258)
+[11](https://ardupilot.org/mavproxy/docs/modules/GPSInput.html)
+[12](https://ardupilot.org/planner/docs/mission-planner-building.html)
+[13](https://online.prowingsafrica.com/wp-content/uploads/2023/05/Mission-Planner-Overview.pdf)
+[14](https://gitlab.com/simoesusp/MissionPlanner)
+[15](https://groups.google.com/g/drones-discuss/c/HjbL3olD-88)
