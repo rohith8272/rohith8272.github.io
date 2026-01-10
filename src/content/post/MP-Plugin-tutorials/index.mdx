@@ -7,7 +7,7 @@ tags:
   - ArduPilot
   - CSharp
   - MAVLink
-***
+---
 
 ## Installation and Setup
 
@@ -37,7 +37,7 @@ tags:
    - Locate your plugin by the `Name` property defined in the class (for example **"Simple Map Marker"**).[1]
    - Enable the plugin and restart Mission Planner if requested so it loads cleanly.
 
-***
+
 
 ## Simple Map Marker plugin
 
@@ -58,7 +58,7 @@ The `MapMarker.cs` example shows how to embed a small UI panel into the **Flight
    - Start Mission Planner with the plugin enabled and go to the **Flight Data** tab.[1]
    - In the quick panel, enter a latitude and longitude (for example `37.7749`, `-122.4194`) and click `Set Marker` to drop a red marker at that location and center the view.[1]
 
-***
+
 
 ## Custom mission library plugin
 
@@ -105,7 +105,6 @@ The `MapMarker.cs` example shows how to embed a small UI panel into the **Flight
    - Connect Mission Planner to a vehicle or SITL instance that publishes `GPS_RAW_INT`.[11]
    - Trigger `"Start GPS RAW Listener"`, then use the Mission Planner console (or debug output in your IDE) to watch the incoming GPS data stream in real time.[3]
 
-***
 
 ## Exploring the Mission Planner UI tree
 
@@ -125,8 +124,6 @@ The `MapMarker.cs` example shows how to embed a small UI panel into the **Flight
 
    - Enable **Panel Explorer** and open the **Flight Data** tab.[2]
    - Check the console output (Visual Studio debug window or standard output) to see the full hierarchy, then reuse those control names in your own plugins to position inputs, charts, or overlays.[12][2]
-
-***
 
 ## Tips for developing your own plugins
 
